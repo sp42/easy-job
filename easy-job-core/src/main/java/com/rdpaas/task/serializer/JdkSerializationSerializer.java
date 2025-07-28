@@ -4,16 +4,13 @@ import java.io.*;
 
 /**
  * jdk序列化实现类
- * @author rongdi
- * @date 2019-03-12 19:10
  */
 public class JdkSerializationSerializer<T> implements ObjectSerializer<T> {
-
     @Override
     public byte[] serialize(T object) {
-        if (object == null) {
+        if (object == null)
             return null;
-        } else {
+         else {
             ByteArrayOutputStream baos = new ByteArrayOutputStream(1024);
 
             try {
@@ -30,9 +27,9 @@ public class JdkSerializationSerializer<T> implements ObjectSerializer<T> {
 
     @Override
     public T deserialize(byte[] bytes) {
-        if (bytes == null) {
+        if (bytes == null)
             return null;
-        } else {
+         else {
             try {
                 ObjectInputStream ex = new ObjectInputStream(new ByteArrayInputStream(bytes));
                 return (T) ex.readObject();

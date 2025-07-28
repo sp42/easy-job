@@ -1,9 +1,5 @@
 package com.rdpaas.task.common;
 
-/**
- * @author rongdi
- * @date 2019/11/26
- */
 public enum NotifyCmd {
 
     //没有通知，默认状态
@@ -15,7 +11,7 @@ public enum NotifyCmd {
     //停止任务(Task)
     STOP_TASK(3);
 
-    int id;
+    final int id;
 
     NotifyCmd(int id) {
         this.id = id;

@@ -2,11 +2,8 @@ package com.rdpaas.task.common;
 
 /**
  * 任务状态枚举类
- * @author rongdi
- * @date 2019-03-12 19:04
  */
 public enum TaskStatus {
-
     //未开始
     NOT_STARTED(0),
     //待执行
@@ -20,7 +17,7 @@ public enum TaskStatus {
     //已停止
     STOP(5);
 
-    int id;
+    final int id;
 
     TaskStatus(int id) {
         this.id = id;
@@ -30,7 +27,7 @@ public enum TaskStatus {
         return id;
     }
 
-    public  static TaskStatus  valueOf(int id) {
+    public static TaskStatus valueOf(int id) {
         switch (id) {
             case 1:
                 return PENDING;

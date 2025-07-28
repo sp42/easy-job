@@ -1,14 +1,14 @@
 package com.rdpaas.task.common;
 
+import lombok.Data;
+
 import java.util.Date;
 
 /**
  * 任务实体
- * @author rongdi
- * @date 2019-03-12 19:02
  */
+@Data
 public class Task {
-
     private Long id;
 
     /**
@@ -88,125 +88,5 @@ public class Task {
         this.name = name;
         this.cronExpr = cronExpr;
         this.invokor = invokor;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Long getNodeId() {
-        return nodeId;
-    }
-
-    public void setNodeId(Long nodeId) {
-        this.nodeId = nodeId;
-    }
-
-    public Date getFirstStartTime() {
-        return firstStartTime;
-    }
-
-    public void setFirstStartTime(Date firstStartTime) {
-        this.firstStartTime = firstStartTime;
-    }
-
-    public Date getNextStartTime() {
-        return nextStartTime;
-    }
-
-    public void setNextStartTime(Date nextStartTime) {
-        this.nextStartTime = nextStartTime;
-    }
-
-    public Long getPid() {
-        return pid;
-    }
-
-    public void setPid(Long pid) {
-        this.pid = pid;
-    }
-
-    public byte[] getInvokeInfo() {
-        return invokeInfo;
-    }
-
-    public void setInvokeInfo(byte[] invokeInfo) {
-        this.invokeInfo = invokeInfo;
-    }
-
-    public Invocation getInvokor() {
-        return invokor;
-    }
-
-    public void setInvokor(Invocation invokor) {
-        this.invokor = invokor;
-    }
-
-    public Integer getSuccessCount() {
-        return successCount;
-    }
-
-    public void setSuccessCount(Integer successCount) {
-        this.successCount = successCount;
-    }
-
-    public Integer getFailCount() {
-        return failCount;
-    }
-
-    public void setFailCount(Integer failCount) {
-        this.failCount = failCount;
-    }
-
-    public String getCronExpr() {
-        return cronExpr;
-    }
-
-    public void setCronExpr(String cronExpr) {
-        this.cronExpr = cronExpr;
-    }
-
-    public TaskStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(TaskStatus status) {
-        this.status = status;
-    }
-
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
     }
 }

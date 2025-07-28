@@ -1,6 +1,7 @@
 package com.rdpaas.task.common;
 
 import com.rdpaas.task.utils.SpringContextUtil;
+import lombok.Data;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 
 import java.io.Serializable;
@@ -8,9 +9,8 @@ import java.lang.reflect.Method;
 
 /**
  * 任务执行方法，用于序列化保存在数据库
- * @author rongdi
- * @date 2019-03-12 19:01
  */
+@Data
 public class Invocation implements Serializable {
 
     private Class targetClass;
@@ -22,7 +22,6 @@ public class Invocation implements Serializable {
     private Object[] args;
 
     public Invocation() {
-
     }
 
     public Invocation(Class targetClass, String methodName, Class[] parameterTypes, Object... args) {
@@ -32,30 +31,16 @@ public class Invocation implements Serializable {
         this.args = args;
     }
 
-    public Object[] getArgs() {
-        return args;
-    }
-
-    public Class getTargetClass() {
-        return targetClass;
-    }
-
-    public String getMethodName() {
-        return methodName;
-    }
-
-    public Class[] getParameterTypes() {
-        return parameterTypes;
-    }
-
     public Object invoke() throws Exception {
-        Object target = null;
+        Object target;
+
         try {
             target = SpringContextUtil.getBean(targetClass);
-        } catch(NoSuchBeanDefinitionException e) {
+        } catch (NoSuchBeanDefinitionException e) {
             target = Class.forName(targetClass.getName());
         }
-        Method method = target.getClass().getMethod(methodName,parameterTypes);
+
+        Method method = target.getClass().getMethod(methodName, parameterTypes);
         // 调用服务方法
         return method.invoke(targetClass.newInstance(), args);
     }

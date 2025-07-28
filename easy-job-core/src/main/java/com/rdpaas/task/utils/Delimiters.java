@@ -2,31 +2,28 @@ package com.rdpaas.task.utils;
 
 /**
  * 分隔符
- * @author rongdi
- * @date 2019-03-15 20:09
  */
-public class Delimiters {
+public interface Delimiters {
+     String COMMA = ",";
 
-    public final static String COMMA = ",";
+     String DOT = ".";
 
-    public final static String DOT = ".";
+     String LINE = "-";
 
-    public final static String LINE = "-";
+     String COLON = ":";
 
-    public final static String COLON = ":";
+     String BLANK = "\\s+";
 
-    public final static String BLANK = "\\s+";
+     String COMMENT = "//";
 
-    public final static String COMMENT = "//";
+     String NEW_LINE = "\n";
 
-    public final static String NEW_LINE = "\n";
+     String SLASH = "/";
 
-    public final static String SLASH = "/";
+     String ANGLE_BRACKETS = "<.*?>";
 
-    public final static String ANGLE_BRACKETS = "<.*?>";
+     String LEFT_BRACKET = "(";
 
-    public final static String LEFT_BRACKET = "(";
-
-    public final static String RIGHT_BRACKET = ")";
+     String RIGHT_BRACKET = ")";
 
 }

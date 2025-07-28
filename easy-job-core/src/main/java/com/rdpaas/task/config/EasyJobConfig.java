@@ -15,7 +15,7 @@ public class EasyJobConfig {
 
     @Value("${easyjob.node.id:1}")
     private Long nodeId;
-    
+
     /**
      * 节点取任务的策略
      */
@@ -27,13 +27,13 @@ public class EasyJobConfig {
      */
     @Value("${easyjob.node.fetchPeriod:100}")
     private int fetchPeriod;
-    
+
     /**
      * 节点取任务据当前的时间段，比如每次取还有5分钟开始的任务，这里单位是秒
      */
     @Value("${easyjob.node.fetchDuration:300}")
     private int fetchDuration;
-    
+
     /**
      * 线程池中队列大小
      */
@@ -78,7 +78,7 @@ public class EasyJobConfig {
 
     @Bean(name = "easyjobDataSource")
     @Qualifier("easyjobDataSource")
-    @ConfigurationProperties(prefix="easyjob.datasource")
+    @ConfigurationProperties(prefix = "easyjob.datasource")
     public DataSource primaryDataSource() {
         return DataSourceBuilder.create().build();
     }
@@ -97,30 +97,30 @@ public class EasyJobConfig {
     }
 
     public String getNodeStrategy() {
-		return nodeStrategy;
-	}
+        return nodeStrategy;
+    }
 
-	public void setNodeStrategy(String nodeStrategy) {
-		this.nodeStrategy = nodeStrategy;
-	}
+    public void setNodeStrategy(String nodeStrategy) {
+        this.nodeStrategy = nodeStrategy;
+    }
 
-	public int getFetchPeriod() {
-		return fetchPeriod;
-	}
+    public int getFetchPeriod() {
+        return fetchPeriod;
+    }
 
-	public void setFetchPeriod(int fetchPeriod) {
-		this.fetchPeriod = fetchPeriod;
-	}
+    public void setFetchPeriod(int fetchPeriod) {
+        this.fetchPeriod = fetchPeriod;
+    }
 
-	public int getFetchDuration() {
-		return fetchDuration;
-	}
+    public int getFetchDuration() {
+        return fetchDuration;
+    }
 
-	public void setFetchDuration(int fetchDuration) {
-		this.fetchDuration = fetchDuration;
-	}
+    public void setFetchDuration(int fetchDuration) {
+        this.fetchDuration = fetchDuration;
+    }
 
-	public int getQueueSize() {
+    public int getQueueSize() {
         return queueSize;
     }
 
